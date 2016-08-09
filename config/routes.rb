@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/tasks/new' => "tasks#new", as: "new_task"
   post '/tasks' => "tasks#create"
   get '/tasks/:id' => "tasks#show", as: 'task'
-  # get '/tasks/:id/edit': get the form to edit an existing task
-  # patch '/tasks/:id': update an existing task
-  # delete '/tasks/:id': delete an existing task
+  get '/tasks/:id/edit' => "tasks#edit", as: 'edit_task'
+  patch '/tasks/:id' => "tasks#update"
+  delete '/tasks/:id' => "tasks#destroy", as: 'delete'
 end

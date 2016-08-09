@@ -1,10 +1,11 @@
  <%= link_to "Create a new task", new_task_path %>
 
  <% @tasks.each do |task| %>
- <h2> <%= link_to task.name.capitalize, task_path(task) %></h2>
- <h3><%= task.description %></h3>
- <h4>Done : <%= task.done %></h4>
- <br>
- <br>
-
+   <h2> <%= link_to task.name.capitalize, task_path(task) %></h2>
+   <h3><%= task.description %></h3>
+   <h4>Done : <%= task.done %></h4>
+   <p><%= link_to "Edit the task", edit_task_path(task) %></p>
+   <p><%= link_to "Delete task", delete_path(task), method: :delete %></p>
+   <br>
+   <br>
  <% end %>
